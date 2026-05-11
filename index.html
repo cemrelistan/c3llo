@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#e0e0e0",
+                        "on-surface": "#161616",
+                        "secondary-container": "#e0e0e0",
+                        "on-background": "#161616",
+                        "on-secondary-fixed": "#161616",
+                        "inverse-primary": "#78a9ff",
+                        "surface-bright": "#ffffff",
+                        "secondary": "#6f6f6f",
+                        "inverse-on-surface": "#f4f4f4",
+                        "on-secondary": "#ffffff",
+                        "error": "#da1e28",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#a7f0ba",
+                        "secondary-fixed": "#e0e0e0",
+                        "on-primary-fixed": "#001d6c",
+                        "surface-tint": "#0f62fe",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "primary-container": "#d0e2ff",
+                        "primary": "#0f62fe",
+                        "tertiary-fixed-dim": "#42be65",
+                        "on-tertiary-fixed": "#022d0d",
+                        "inverse-surface": "#393939",
+                        "outline": "#8d8d8d",
+                        "on-primary-fixed-variant": "#0043ce",
+                        "on-error-container": "#750e13",
+                        "surface-container-low": "#f4f4f4",
+                        "surface-container-high": "#e0e0e0",
+                        "on-secondary-fixed-variant": "#525252",
+                        "surface-container-highest": "#c6c6c6",
+                        "on-secondary-container": "#525252",
+                        "on-surface-variant": "#525252",
+                        "primary-fixed-dim": "#78a9ff",
+                        "on-tertiary-container": "#044317",
+                        "surface-variant": "#f4f4f4",
+                        "surface-dim": "#e0e0e0",
+                        "tertiary": "#198038",
+                        "on-tertiary-fixed-variant": "#044317",
+                        "tertiary-container": "#a7f0ba",
+                        "surface-container": "#f4f4f4",
+                        "surface": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d0e2ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#161616",
+                        "error-container": "#fff1f1",
+                        "background": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["IBM Plex Sans", "sans-serif"],
+                        "display": ["IBM Plex Sans", "sans-serif"],
+                        "body": ["IBM Plex Sans", "sans-serif"],
+                        "label": ["IBM Plex Sans", "sans-serif"]
+                    },
+                    "fontSize": {}
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans', sans-serif; }
+    </style>
+<style>
+    @keyframes hero-fade-scale {
+        from {
+            opacity: 0;
+            transform: scale(1.05);
+        }
+        to {
+            opacity: 0.8;
+            transform: scale(1);
+        }
+    }
+    @keyframes staggered-slide-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-hero-bg {
+        animation: hero-fade-scale 1.5s cubic-bezier(0.2, 0, 0.38, 0.9) forwards;
+    }
+    .animate-staggered {
+        opacity: 0;
+        animation: staggered-slide-in 0.8s cubic-bezier(0.2, 0, 0.38, 0.9) forwards;
+    }
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.5s; }
+    .delay-3 { animation-delay: 0.7s; }
+</style></head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-12">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-on-background font-body text-sm font-normal leading-relaxed fixed top-0 w-full z-50 border-b border-outline-variant dark:border-on-secondary-container flex justify-between items-center px-6 md:px-12 h-12">
+<div class="text-xl font-headline font-semibold text-on-surface dark:text-surface">
+            Portfolio
+        </div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1 font-semibold opacity-80 transition-opacity duration-150" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-surface transition-colors hover:bg-surface-variant dark:hover:bg-on-secondary-container transition-all px-2 py-1" href="about.html">About</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-surface transition-colors hover:bg-surface-variant dark:hover:bg-on-secondary-container transition-all px-2 py-1" href="blog.html">Blog</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-surface transition-colors hover:bg-surface-variant dark:hover:bg-on-secondary-container transition-all px-2 py-1" href="about.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all rounded p-1">
+<span class="material-symbols-outlined text-lg">dark_mode</span>
+</button>
+<a href="admin_login.html" class="bg-primary text-on-primary px-4 py-1.5 font-semibold text-sm hover:opacity-90 transition-opacity">
+                Admin
+            </a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col">
+<!-- Hero Section (Slideshow Placeholder) -->
+<section class="relative w-full h-[716px] bg-surface-container flex items-center justify-center overflow-hidden border-b border-outline-variant">
+<div class="absolute inset-0 z-0">
+<img alt="Featured Artwork" class="w-full h-full object-cover opacity-80 animate-hero-bg" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant IBM Blue. The mood is serene yet technologically advanced, fitting for an enterprise-grade portfolio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_ze55l2nBbRw-wMu_i8MhrJ8mYmN8RaPTv8-gNyks_Ih1DyfJHU9HxmoSw51UJsNMSpnleQCRbSs2hTxenlFt1dwL9ar7JgD0NmiLPrjvOWKuJOhmE6KW8qVm1Dg794lDZQ4v8rMZ_ioRuZQYcwwetEZokFNvdpUrxVrdWKj9xLI-6W0Qhff8jrXz4CY2X5E6mU2qVF3CdysERWmZRd8rpkaIPtyb3vK0nnJKGrb-p9EtfhpVwMkRmYm0kqUHHMSphz6XghzPTVA"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent z-10"></div>
+<div class="relative z-20 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
+<h1 class="font-headline text-4xl md:text-6xl font-bold text-surface-bright mb-4 tracking-tight animate-staggered delay-1">Productive Clarity in Design.</h1>
+<p class="font-body text-lg md:text-xl text-surface-container-low mb-8 max-w-2xl font-light animate-staggered delay-2">Systematic, accessible, and data-dense enterprise UI solutions built for modern applications.</p>
+<div class="flex gap-4 animate-staggered delay-3">
+<button class="bg-primary text-on-primary px-6 py-3 font-semibold text-base flex items-center gap-2 hover:bg-on-primary-fixed-variant transition-colors min-w-[48px] min-h-[48px] justify-center">
+                        View Projects
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="border border-surface-bright text-surface-bright px-6 py-3 font-semibold text-base hover:bg-surface-bright/10 transition-colors min-w-[48px] min-h-[48px] justify-center">
+                        Contact Me
+                    </button>
+</div>
+</div>
+<!-- Slideshow Controls -->
+<div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+<div class="w-8 h-1 bg-primary"></div>
+<div class="w-8 h-1 bg-surface-bright/50"></div>
+<div class="w-8 h-1 bg-surface-bright/50"></div>
+</div>
+</section>
+<!-- Featured Projects Grid -->
+<section class="py-16 px-6 md:px-12 max-w-7xl mx-auto w-full">
+<div class="flex justify-between items-end mb-8 border-b border-outline-variant pb-4">
+<div>
+<h2 class="font-headline text-2xl font-semibold text-on-background">Featured Work</h2>
+<p class="font-body text-sm text-on-surface-variant mt-1">Selected enterprise solutions and digital platforms.</p>
+</div>
+<a class="text-primary text-sm font-semibold hover:underline flex items-center gap-1" href="#">
+                    All Projects <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Project Card 1 -->
+<div class="bg-surface-container flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden relative">
+<img alt="Data Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A clean, high-contrast data dashboard interface displayed on a sleek monitor. The UI features stark white backgrounds with crisp black text and sharp geometric data visualizations in IBM Blue. The lighting is studio-quality, casting subtle shadows that emphasize the flat, structured layout typical of enterprise software. The overall mood is professional, organized, and highly analytical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQJdOCyEW1eE57GUby_5PA2uZkBsWF7iuqDE1KoxRLp3aoLONVjpikxmC0TwdxCfbtavD4HXn9QdFEX-yakaAxIQQcZSnvr6werYjEyFo2GVBi55WP6fzfOVx887LXagjj6mIan7Ns7C-4i_ZYQ9PQrJOCv7ZXBUlQW384-GYjBQYdHWQtmMwxfEdQNMoYwwC7uqjebLcYw3gHlGjhcHh2CODhlWlIOuqZHJP15kncorOz7XSbZ6QB1W-46p7DlxRSWDSGecITYE0"/>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">FinTech</span>
+<h3 class="font-headline text-lg font-semibold text-on-background mb-2">Global Trading Platform</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 flex-grow">A high-density data table and visualization suite designed for institutional traders, focusing on clarity and speed.</p>
+<div class="flex items-center text-on-surface-variant text-xs gap-4 mt-auto border-t border-outline-variant pt-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">code</span> React, D3.js</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="bg-surface-container flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden relative">
+<img alt="Medical App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A minimalist healthcare application interface shown on a tablet device. The design utilizes a stark white canvas with subtle light gray borders and distinct green success indicators. The typography is legible and precise, typical of the IBM Plex Sans family. The scene is brightly lit, conveying a sense of sterility, trust, and operational efficiency in a medical context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-KTQej6J2LZu1X2hotowZKwkMzKJ643gpao3yL3OU2gZSbcAPbP3HxvM8hR-4ZZp843WWClRfha9h5o4rHh5NYtBHhw1fxtY6oua_2dSObW8VNAfBJ8ARHzEjq-8IZEDHLnBdNTp-fmLI8Kxs5NRYrlSo1Tn4Mo04CaoZn5ZbWapOdw5Gvq6KBLnK9El3tz-w1JoGe4hymWH3Xrh_gMau0xhqtZQidZ5sT_iodE4RMnPVB8uJAyf-UmpMsEOVeSBNODJ4WsyqXkw"/>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Healthcare</span>
+<h3 class="font-headline text-lg font-semibold text-on-background mb-2">Patient Records System</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 flex-grow">Streamlined electronic health records interface prioritizing WCAG AA accessibility and minimal friction for practitioners.</p>
+<div class="flex items-center text-on-surface-variant text-xs gap-4 mt-auto border-t border-outline-variant pt-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">accessibility</span> Accessibility</span>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="bg-surface-container flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden relative">
+<img alt="Logistics Network" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An abstract representation of a global logistics network, visualized as a dark, high-contrast map with glowing blue nodes and connecting lines. The aesthetic is highly technical and data-driven, fitting an enterprise monitoring system. The lighting highlights the active routes against a deep black background, creating a sense of scale, complexity, and real-time connectivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGv6FFgtYX27HCse5sOKGCK9hMf_5Y2xEa0BW31l9K7N-W3IEaXuvVeT65gUvJB1-f6Wv8DndV9dHoejigJYgo8UGJKE9bDfIJd96mK9ElkezoUu8gfKaDnV0rCBWYTMXLXxxt8ICNUuuFlVR8kYGOvLp1nDZm9w-KV6XIEKWmpxztFRounZFfFumxaQAbYd0wDopFTpnX27FJEHemQWqNCOztgT9-HnG__QWnqh0fYgbyxa2dF_3xiJdz1kqt-wEYERZjAHrcWXs"/>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Logistics</span>
+<h3 class="font-headline text-lg font-semibold text-on-background mb-2">Supply Chain Monitor</h3>
+<p class="font-body text-sm text-on-surface-variant mb-4 flex-grow">Real-time global tracking dashboard with complex filtering systems and predictive error flagging.</p>
+<div class="flex items-center text-on-surface-variant text-xs gap-4 mt-auto border-t border-outline-variant pt-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> 2022</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">map</span> Mapping</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Capabilities Section -->
+<section class="py-16 px-6 md:px-12 bg-surface-variant w-full">
+<div class="max-w-7xl mx-auto">
+<div class="mb-12 border-b border-outline-variant pb-4">
+<h2 class="font-headline text-2xl font-semibold text-on-background">Capabilities</h2>
+<p class="font-body text-sm text-on-surface-variant mt-1">Core competencies in enterprise design.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex flex-col">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-weight="fill" style="font-variation-settings: 'FILL' 1;">design_services</span>
+<h3 class="font-headline text-base font-semibold text-on-background mb-2">Design Systems</h3>
+<p class="font-body text-sm text-on-surface-variant">Creating robust, scalable token architectures and component libraries for cohesive product suites.</p>
+</div>
+<div class="flex flex-col">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-weight="fill" style="font-variation-settings: 'FILL' 1;">table_chart</span>
+<h3 class="font-headline text-base font-semibold text-on-background mb-2">Data Density</h3>
+<p class="font-body text-sm text-on-surface-variant">Optimizing complex tables and dashboards for maximum information retrieval without cognitive overload.</p>
+</div>
+<div class="flex flex-col">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-weight="fill" style="font-variation-settings: 'FILL' 1;">accessibility_new</span>
+<h3 class="font-headline text-base font-semibold text-on-background mb-2">Accessibility</h3>
+<p class="font-body text-sm text-on-surface-variant">Ensuring strict WCAG compliance through rigorous color contrast and semantic HTML structuring.</p>
+</div>
+<div class="flex flex-col">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-weight="fill" style="font-variation-settings: 'FILL' 1;">speed</span>
+<h3 class="font-headline text-base font-semibold text-on-background mb-2">Performance UI</h3>
+<p class="font-body text-sm text-on-surface-variant">Designing lightweight interfaces that prioritize rapid rendering and immediate user feedback.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full bottom-0 border-t border-outline-variant dark:border-on-secondary-container flex flex-col md:flex-row justify-between items-center gap-4 px-12 py-8 mt-auto">
+<div class="text-label font-headline font-bold text-on-surface dark:text-surface">
+            Portfolio
+        </div>
+<div class="font-body text-xs text-on-surface-variant dark:text-secondary-fixed-dim">
+            © 2024 Portfolio. Built for Productive Clarity.
+        </div>
+<div class="flex gap-6 font-body text-xs">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:underline hover:text-on-surface dark:hover:text-surface transition-colors" href="#">RSS Feed</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:underline hover:text-on-surface dark:hover:text-surface transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:underline hover:text-on-surface dark:hover:text-surface transition-colors" href="#">Terms</a>
+</div>
+</footer>
+</body></html>

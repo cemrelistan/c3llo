@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Login - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#e0e0e0",
+                        "on-surface": "#161616",
+                        "secondary-container": "#e0e0e0",
+                        "on-background": "#161616",
+                        "on-secondary-fixed": "#161616",
+                        "inverse-primary": "#78a9ff",
+                        "surface-bright": "#ffffff",
+                        "secondary": "#6f6f6f",
+                        "inverse-on-surface": "#f4f4f4",
+                        "on-secondary": "#ffffff",
+                        "error": "#da1e28",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#a7f0ba",
+                        "secondary-fixed": "#e0e0e0",
+                        "on-primary-fixed": "#001d6c",
+                        "surface-tint": "#0f62fe",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "primary-container": "#d0e2ff",
+                        "primary": "#0f62fe",
+                        "tertiary-fixed-dim": "#42be65",
+                        "on-tertiary-fixed": "#022d0d",
+                        "inverse-surface": "#393939",
+                        "outline": "#8d8d8d",
+                        "on-primary-fixed-variant": "#0043ce",
+                        "on-error-container": "#750e13",
+                        "surface-container-low": "#f4f4f4",
+                        "surface-container-high": "#e0e0e0",
+                        "on-secondary-fixed-variant": "#525252",
+                        "surface-container-highest": "#c6c6c6",
+                        "on-secondary-container": "#525252",
+                        "on-surface-variant": "#525252",
+                        "primary-fixed-dim": "#78a9ff",
+                        "on-tertiary-container": "#044317",
+                        "surface-variant": "#f4f4f4",
+                        "surface-dim": "#e0e0e0",
+                        "tertiary": "#198038",
+                        "on-tertiary-fixed-variant": "#044317",
+                        "tertiary-container": "#a7f0ba",
+                        "surface-container": "#f4f4f4",
+                        "surface": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d0e2ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#161616",
+                        "error-container": "#fff1f1",
+                        "background": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "0rem"
+                    },
+                    "spacing": {
+                        "0.5": "0.125rem",
+                        "1": "0.25rem",
+                        "1.5": "0.375rem",
+                        "2": "0.5rem",
+                        "2.5": "0.625rem",
+                        "3": "0.75rem",
+                        "4": "1rem",
+                        "5": "1.25rem",
+                        "6": "1.5rem",
+                        "8": "2rem",
+                        "10": "2.5rem",
+                        "12": "3rem",
+                        "16": "4rem",
+                        "20": "5rem",
+                        "24": "6rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["IBM Plex Sans", "sans-serif"],
+                        "display": ["IBM Plex Sans", "sans-serif"],
+                        "body": ["IBM Plex Sans", "sans-serif"],
+                        "label": ["IBM Plex Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans', sans-serif; }
+        .carbon-input {
+            border: none;
+            border-bottom: 1px solid #8d8d8d;
+            background-color: #f4f4f4;
+            height: 40px;
+            padding: 0 16px;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        .carbon-input:focus {
+            outline: none;
+            border-bottom: 2px solid #0f62fe;
+            margin-bottom: -1px;
+        }
+        .carbon-button {
+            height: 48px;
+            padding: 0 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .carbon-button-primary {
+            background-color: #0f62fe;
+            color: #ffffff;
+        }
+        .carbon-button-primary:hover {
+            background-color: #0043ce;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body antialiased">
+<!-- TopNavBar Omitted: Transactional intent (Login screen) dictates hiding the global navigation shell. -->
+<main class="flex-grow flex items-center justify-center p-6 bg-surface-variant">
+<div class="w-full max-w-md bg-surface p-8 shadow-sm border border-outline-variant">
+<div class="mb-8">
+<h1 class="text-2xl font-headline font-semibold text-on-surface mb-2">Admin Login</h1>
+<p class="text-sm text-on-surface-variant">Secure access requires authentication.</p>
+</div>
+<form action="admin.html" class="space-y-6" method="GET">
+<div>
+<label class="block text-sm font-semibold text-on-surface mb-2" for="password">Password</label>
+<div class="relative">
+<input class="carbon-input" id="password" name="password" placeholder="Enter password (12345678)" type="password"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant" data-icon="lock">lock</span>
+</div>
+</div>
+<div class="pt-4">
+<button class="carbon-button carbon-button-primary w-full" type="submit">
+                        Login
+                        <span class="material-symbols-outlined ml-auto" data-icon="arrow_right">arrow_right</span>
+</button>
+</div>
+</form>
+<div class="mt-8 pt-6 border-t border-outline-variant">
+<a class="text-sm text-primary hover:underline flex items-center" href="index.html">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="arrow_back">arrow_back</span>
+                    Return to Portfolio
+                </a>
+</div>
+</div>
+</main>
+<!-- Footer Omitted: Transactional intent prioritizes focused canvas. -->
+</body></html>

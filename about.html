@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About &amp; Contact - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#e0e0e0",
+                        "on-surface": "#161616",
+                        "secondary-container": "#e0e0e0",
+                        "on-background": "#161616",
+                        "on-secondary-fixed": "#161616",
+                        "inverse-primary": "#78a9ff",
+                        "surface-bright": "#ffffff",
+                        "secondary": "#6f6f6f",
+                        "inverse-on-surface": "#f4f4f4",
+                        "on-secondary": "#ffffff",
+                        "error": "#da1e28",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#a7f0ba",
+                        "secondary-fixed": "#e0e0e0",
+                        "on-primary-fixed": "#001d6c",
+                        "surface-tint": "#0f62fe",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "primary-container": "#d0e2ff",
+                        "primary": "#0f62fe",
+                        "tertiary-fixed-dim": "#42be65",
+                        "on-tertiary-fixed": "#022d0d",
+                        "inverse-surface": "#393939",
+                        "outline": "#8d8d8d",
+                        "on-primary-fixed-variant": "#0043ce",
+                        "on-error-container": "#750e13",
+                        "surface-container-low": "#f4f4f4",
+                        "surface-container-high": "#e0e0e0",
+                        "on-secondary-fixed-variant": "#525252",
+                        "surface-container-highest": "#c6c6c6",
+                        "on-secondary-container": "#525252",
+                        "on-surface-variant": "#525252",
+                        "primary-fixed-dim": "#78a9ff",
+                        "on-tertiary-container": "#044317",
+                        "surface-variant": "#f4f4f4",
+                        "surface-dim": "#e0e0e0",
+                        "tertiary": "#198038",
+                        "on-tertiary-fixed-variant": "#044317",
+                        "tertiary-container": "#a7f0ba",
+                        "surface-container": "#f4f4f4",
+                        "surface": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d0e2ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#161616",
+                        "error-container": "#fff1f1",
+                        "background": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["IBM Plex Sans", "sans-serif"],
+                        "display": ["IBM Plex Sans", "sans-serif"],
+                        "body": ["IBM Plex Sans", "sans-serif"],
+                        "label": ["IBM Plex Sans", "sans-serif"]
+                    },
+                    "fontSize": {}
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: #ffffff;
+            color: #161616;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen">
+<!-- TopNavBar Component -->
+<nav class="bg-surface dark:bg-on-background fixed top-0 w-full z-50 border-b border-outline-variant dark:border-on-secondary-container">
+<div class="flex justify-between items-center px-6 md:px-12 h-12 w-full max-w-7xl mx-auto">
+<div class="text-xl font-headline font-semibold text-on-surface dark:text-surface">
+                Portfolio
+            </div>
+<div class="hidden md:flex space-x-8">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-surface transition-colors font-body text-sm font-normal leading-relaxed hover:bg-surface-variant dark:hover:bg-on-secondary-container transition-all" href="index.html">Home</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1 font-semibold font-body text-sm leading-relaxed hover:bg-surface-variant dark:hover:bg-on-secondary-container transition-all Active: opacity-80 transition-opacity duration-150" href="about.html">About</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-surface transition-colors font-body text-sm font-normal leading-relaxed hover:bg-surface-variant dark:hover:bg-on-secondary-container transition-all" href="blog.html">Blog</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-surface transition-colors font-body text-sm font-normal leading-relaxed hover:bg-surface-variant dark:hover:bg-on-secondary-container transition-all" href="about.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<a href="admin_login.html" class="bg-primary text-on-primary hover:bg-primary-fixed-dim transition-colors px-4 py-2 text-sm font-semibold h-10 flex items-center justify-center min-w-[48px]">
+                    Admin
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-16 px-6 md:px-12 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Storytelling Section (About) -->
+<section class="col-span-1 lg:col-span-7 flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<h1 class="font-headline font-semibold text-[32px] leading-tight text-on-surface">Productive Clarity</h1>
+<p class="font-body text-base text-on-surface-variant leading-relaxed max-w-2xl">
+                    We build enterprise systems that prioritize data density and clear user workflows. Our approach is systematic, stripped of unnecessary ornamentation, and focused entirely on empowering professional users to make informed decisions quickly.
+                </p>
+</div>
+<!-- Bento Grid - Image Focus -->
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 h-64 bg-surface-variant relative overflow-hidden">
+<img alt="Office" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="A bright, minimalist, modern office space bathed in natural daylight. Clean white walls, sleek unadorned desks, and a distinct lack of clutter emphasize a productive and focused environment. The visual style is crisp and professional, utilizing a high-contrast palette of pristine whites and subtle gray shadows, perfectly aligning with a stark enterprise aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGLSZIAFgzbyhFqk-aPdcLDhI14kKPFqPmRv_PE5tLoMm5gduPu7osxypMcxtwh4ZSKDeNLG_-CHxajOBIgjDqFelD1cgP1ioUIbmWuaZdfsZymUVig9Bw63Lp7Op4WAsjfle--JdNAUlOre-BVmhzo0l62_baqbwhgwUcDjuABJyCXmvrbF1R4IC9P2EG8oW80vJ2IlxWrMVKhjqaa2MbTZtXAXhivNx8C88hbeBm4YVwNjrDT1DrYf5JZiBGIdIOJ-A37xAnyZY"/>
+</div>
+<div class="col-span-1 h-48 bg-surface-variant p-6 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">architecture</span>
+<h3 class="font-headline font-semibold text-xl text-on-surface">Systematic Design</h3>
+</div>
+<div class="col-span-1 h-48 bg-surface-variant p-6 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">data_usage</span>
+<h3 class="font-headline font-semibold text-xl text-on-surface">Data Density</h3>
+</div>
+</div>
+<div class="bg-surface-variant p-8 border-l-4 border-primary">
+<p class="font-body text-base text-on-surface leading-relaxed italic">
+                    "The goal is not to simplify the complex, but to make the complex clear. Every element must earn its place on the screen."
+                </p>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="col-span-1 lg:col-span-5 flex flex-col gap-8">
+<div class="bg-surface-variant p-8 w-full border-b border-outline-variant">
+<h2 class="font-headline font-semibold text-[24px] text-on-surface mb-6">Get in Touch</h2>
+<form class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs text-on-surface-variant font-semibold" for="name">Full Name</label>
+<input class="bg-inverse-on-surface border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 h-10 font-body text-sm text-on-surface placeholder-secondary transition-colors w-full rounded-none" id="name" name="name" placeholder="Jane Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs text-on-surface-variant font-semibold" for="email">Email Address</label>
+<input class="bg-inverse-on-surface border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 h-10 font-body text-sm text-on-surface placeholder-secondary transition-colors w-full rounded-none" id="email" name="email" placeholder="jane@company.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs text-on-surface-variant font-semibold" for="subject">Subject</label>
+<select class="bg-inverse-on-surface border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 h-10 font-body text-sm text-on-surface transition-colors w-full rounded-none" id="subject" name="subject">
+<option>Enterprise Implementation</option>
+<option>Design System Audit</option>
+<option>General Inquiry</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs text-on-surface-variant font-semibold" for="message">Message</label>
+<textarea class="bg-inverse-on-surface border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 py-2 font-body text-sm text-on-surface placeholder-secondary transition-colors w-full rounded-none resize-none" id="message" name="message" placeholder="How can we help establish clarity for your workflows?" rows="4"></textarea>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-fixed-dim transition-colors h-12 px-6 font-headline font-semibold text-sm w-full flex items-center justify-center mt-2 min-w-[48px]" type="submit">
+                        Send Message
+                        <span class="material-symbols-outlined ml-2 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="font-body text-xs text-on-surface-variant mt-2">We typically respond within 24 business hours.</p>
+</form>
+</div>
+<!-- Contact Info -->
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-1">
+<h4 class="font-label text-xs text-on-surface-variant font-semibold uppercase tracking-wide mb-2">Location</h4>
+<p class="font-body text-sm text-on-surface">1200 Clarity Blvd<br/>Suite 400<br/>Design District</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label text-xs text-on-surface-variant font-semibold uppercase tracking-wide mb-2">Direct</h4>
+<p class="font-body text-sm text-on-surface">inquiries@portfolio.system<br/>+1 (555) 019-2834</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container dark:bg-inverse-surface border-t border-outline-variant dark:border-on-secondary-container mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 px-12 py-8 w-full max-w-7xl mx-auto">
+<div class="text-label font-headline font-bold text-on-surface dark:text-surface">
+                © 2024 Portfolio. Built for Productive Clarity.
+            </div>
+<div class="flex space-x-6 font-body text-xs text-on-surface-variant dark:text-secondary-fixed-dim">
+<a class="hover:underline hover:text-on-surface dark:hover:text-surface transition-colors hover:underline transition-all" href="#">RSS Feed</a>
+<a class="hover:underline hover:text-on-surface dark:hover:text-surface transition-colors hover:underline transition-all" href="#">Privacy</a>
+<a class="hover:underline hover:text-on-surface dark:hover:text-surface transition-colors hover:underline transition-all" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>

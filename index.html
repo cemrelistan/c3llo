@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ders Sihirbazı - İTÜ Veri Bilimi ve Analitiği</title>
+    <meta name="description" content="İTÜ Veri Bilimi ve Analitiği bölümü için kişiselleştirilmiş ders seçim ve planlama aracı. Ders bağlantı grafiği ve haftalık takvim oluşturucu." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧙</text></svg>" />
+  </head>
+  <body>
+    <div class="app-container" id="app">
+      <!-- Header -->
+      <header class="header" id="header">
+        <div class="header-left">
+          <button class="sidebar-toggle" id="sidebarToggle" title="Menüyü aç/kapat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="header-brand">
+            <span class="header-icon">🧙</span>
+            <div>
+              <h1 class="header-title">Ders Sihirbazı</h1>
+              <span class="header-subtitle">İTÜ Veri Bilimi ve Analitiği</span>
+            </div>
+          </div>
+        </div>
+        <nav class="tab-container" id="tabContainer">
+          <button class="tab-btn active" data-tab="graph" id="tabGraph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="5" cy="6" r="3"></circle>
+              <circle cx="19" cy="6" r="3"></circle>
+              <circle cx="12" cy="18" r="3"></circle>
+              <line x1="7.5" y1="7.5" x2="10.5" y2="16.5"></line>
+              <line x1="16.5" y1="7.5" x2="13.5" y2="16.5"></line>
+            </svg>
+            <span>Bağlantı Grafiği</span>
+          </button>
+          <button class="tab-btn" data-tab="calendar" id="tabCalendar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Takvim Oluşturucu</span>
+          </button>
+        </nav>
+        <div class="header-right">
+          <div class="stats-summary" id="statsSummary">
+            <div class="stat-chip">
+              <span class="stat-chip-label">VERİLEN KREDİ</span>
+              <span class="stat-chip-value" id="headerPassedCount">0</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-chip-label">BU DÖNEM SEÇİLEN</span>
+              <span class="stat-chip-value" id="headerAvailableCount">0</span>
+            </div>
+            <div class="stat-chip" style="background: var(--primary); color: white; border: none;">
+              <span class="stat-chip-label" style="color: rgba(255,255,255,0.8);">TOPLAM KREDİ</span>
+              <span class="stat-chip-value" id="headerTotalCount">0</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h2>📚 Verdiğin Dersler</h2>
+          <button class="sidebar-close" id="sidebarClose">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="sidebar-search">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="search-input" id="courseSearch" placeholder="Ders ara...">
+        </div>
+
+        <div class="sidebar-actions">
+          <button class="btn-action" id="selectAllBtn">✓ Tümünü Seç</button>
+          <button class="btn-action btn-action-danger" id="clearAllBtn">✕ Temizle</button>
+        </div>
+
+        <div class="semester-list" id="semesterList">
+          <!-- Dynamically populated -->
+        </div>
+      </aside>
+
+      <!-- Overlay -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content" id="mainContent">
+        <!-- Graph Tab -->
+        <div class="tab-content active" id="graphTab">
+          <div class="graph-toolbar">
+            <div class="graph-filter-bar" id="graphFilterBar">
+              <button class="filter-btn active" data-filter="all">Tümü</button>
+              <button class="filter-btn" data-filter="mandatory">
+                <span class="filter-dot" style="background: var(--color-mandatory)"></span>
+                Zorunlu
+              </button>
+              <button class="filter-btn" data-filter="restricted_elective">
+                <span class="filter-dot" style="background: var(--color-restricted)"></span>
+                Sınırlı Seçmeli
+              </button>
+              <button class="filter-btn" data-filter="elective">
+                <span class="filter-dot" style="background: var(--color-elective)"></span>
+                Seçmeli
+              </button>
+              <button class="filter-btn" data-filter="itb">ITB</button>
+            </div>
+            <div class="graph-controls">
+              <button class="graph-control-btn" id="zoomIn" title="Yakınlaştır">+</button>
+              <button class="graph-control-btn" id="zoomOut" title="Uzaklaştır">−</button>
+              <button class="graph-control-btn" id="resetView" title="Sıfırla">⟳</button>
+            </div>
+          </div>
+          <div class="graph-container" id="graphContainer">
+            <svg id="graphSvg"></svg>
+          </div>
+          <div class="graph-legend">
+            <div class="legend-item">
+              <span class="legend-dot" style="background: var(--color-mandatory)"></span>
+              <span>Zorunlu</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: var(--color-restricted)"></span>
+              <span>Sınırlı Seçmeli</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: var(--color-elective)"></span>
+              <span>Seçmeli</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: var(--color-itb)"></span>
+              <span>ITB</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot legend-passed"></span>
+              <span>Verilmiş</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot legend-available"></span>
+              <span>Alınabilir</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendar Tab -->
+        <div class="tab-content" id="calendarTab">
+          <div class="calendar-layout">
+            <div class="available-courses" id="availableCoursesList">
+              <div class="available-courses-header">
+                <h3>📋 Alınabilecek Dersler</h3>
+                <span class="badge" id="availableBadge">0</span>
+              </div>
+              <div class="available-courses-filter">
+                <select id="courseTypeFilter" class="select-input">
+                  <option value="all">Tüm Türler</option>
+                  <option value="mandatory">Zorunlu</option>
+                  <option value="restricted_elective">Sınırlı Seçmeli</option>
+                  <option value="elective">Seçmeli</option>
+                  <option value="itb">ITB</option>
+                </select>
+              </div>
+              <div class="course-cards-list" id="courseCardsList">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+            <div class="calendar-wrapper">
+              <div class="calendar-stats" id="calendarStats">
+                <div class="stat-item">
+                  <span class="stat-label">Seçilen Ders</span>
+                  <span class="stat-value" id="selectedCourseCount">0</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Toplam Kredi</span>
+                  <span class="stat-value" id="totalCredits">0</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Toplam AKTS</span>
+                  <span class="stat-value" id="totalECTS">0</span>
+                </div>
+                <div class="stat-item conflict-indicator" id="conflictIndicator" style="display:none">
+                  <span class="stat-label">⚠️ Çakışma</span>
+                  <span class="stat-value stat-danger" id="conflictCount">0</span>
+                </div>
+              </div>
+              <div class="weekly-calendar" id="weeklyCalendar">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Tooltip -->
+      <div class="tooltip" id="tooltip" style="display:none"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

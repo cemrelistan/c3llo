@@ -312,6 +312,7 @@ export class Calendar {
       case COURSE_TYPES.RESTRICTED_ELECTIVE: return 'restricted';
       case COURSE_TYPES.ELECTIVE: return 'elective';
       case COURSE_TYPES.ITB: return 'itb';
+      case COURSE_TYPES.DIL: return 'dil';
       default: return '';
     }
   }

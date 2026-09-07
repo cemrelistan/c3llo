@@ -62,7 +62,7 @@ export class Sidebar {
     
     // First add mandatory/general courses grouped by semester
     for (const course of courses) {
-      if (course.type === COURSE_TYPES.ITB) continue; // ITB'yi ayrı göster
+      if (course.type === COURSE_TYPES.ITB || course.type === COURSE_TYPES.DIL) continue; // ITB ve Dil'i ayrı göster
       
       const key = course.type === COURSE_TYPES.MANDATORY || course.type === COURSE_TYPES.GENERAL
         ? `${course.semester}. Dönem`
@@ -80,6 +80,12 @@ export class Sidebar {
     const itbCourses = courses.filter(c => c.type === COURSE_TYPES.ITB);
     if (itbCourses.length > 0) {
       semesters.set('ITB Seçmeli', itbCourses);
+    }
+
+    // Add Dil group
+    const dilCourses = courses.filter(c => c.type === COURSE_TYPES.DIL);
+    if (dilCourses.length > 0) {
+      semesters.set('Dil Seçmeli', dilCourses);
     }
     
     let html = '';
@@ -143,6 +149,7 @@ export class Sidebar {
       case COURSE_TYPES.RESTRICTED_ELECTIVE: return 'var(--accent-purple)';
       case COURSE_TYPES.ELECTIVE: return 'var(--accent-green)';
       case COURSE_TYPES.ITB: return 'var(--accent-orange)';
+      case COURSE_TYPES.DIL: return '#ec4899';
       case COURSE_TYPES.GENERAL: return 'var(--text-muted)';
       default: return 'var(--text-muted)';
     }

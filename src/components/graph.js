@@ -160,6 +160,7 @@ export class CourseGraph {
       case COURSE_TYPES.RESTRICTED_ELECTIVE: return '#a855f7';
       case COURSE_TYPES.ELECTIVE: return '#10b981';
       case COURSE_TYPES.ITB: return '#f59e0b';
+      case COURSE_TYPES.DIL: return '#ec4899';
       case COURSE_TYPES.GENERAL: return '#64748b';
       default: return '#64748b';
     }

@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧙</text></svg>" />
-    <script type="module" crossorigin src="./assets/index-BlANTZLY.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-2hE96d_s.css">
+    <script type="module" crossorigin src="./assets/index-dFhQoCy_.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BtlspOFf.css">
   </head>
   <body>
     <div class="app-container" id="app">
@@ -27,7 +27,7 @@
           <div class="header-brand">
             <span class="header-icon">🧙</span>
             <div>
-              <h1 class="header-title">Ders Sihirbazı</h1>
+              <h1 class="header-title">Ders Sihirbazı <span class="brand-cello">by Cello</span></h1>
               <span class="header-subtitle">İTÜ Veri Bilimi ve Analitiği</span>
             </div>
           </div>
@@ -119,11 +119,11 @@
                 <span class="filter-dot" style="background: var(--color-restricted)"></span>
                 Sınırlı Seçmeli
               </button>
-              <button class="filter-btn" data-filter="elective">
-                <span class="filter-dot" style="background: var(--color-elective)"></span>
-                Seçmeli
-              </button>
               <button class="filter-btn" data-filter="itb">ITB</button>
+              <button class="filter-btn" data-filter="dil">
+                <span class="filter-dot" style="background: var(--color-dil)"></span>
+                Dil
+              </button>
             </div>
             <div class="graph-controls">
               <button class="graph-control-btn" id="zoomIn" title="Yakınlaştır">+</button>
@@ -144,12 +144,12 @@
               <span>Sınırlı Seçmeli</span>
             </div>
             <div class="legend-item">
-              <span class="legend-dot" style="background: var(--color-elective)"></span>
-              <span>Seçmeli</span>
-            </div>
-            <div class="legend-item">
               <span class="legend-dot" style="background: var(--color-itb)"></span>
               <span>ITB</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: var(--color-dil)"></span>
+              <span>Dil</span>
             </div>
             <div class="legend-item">
               <span class="legend-dot legend-passed"></span>
@@ -175,8 +175,8 @@
                   <option value="all">Tüm Türler</option>
                   <option value="mandatory">Zorunlu</option>
                   <option value="restricted_elective">Sınırlı Seçmeli</option>
-                  <option value="elective">Seçmeli</option>
                   <option value="itb">ITB</option>
+                  <option value="dil">Dil</option>
                 </select>
               </div>
               <div class="course-cards-list" id="courseCardsList">

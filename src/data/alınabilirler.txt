@@ -1,0 +1,239 @@
+Ders	Dil	Kredi	AKTS	Teo.	Uyg.	Lab.
+ALM 101
+Almanca I	Almanca	3	4	2	2	0
+ALM 102
+Almanca II	Almanca	3	4	2	2	0
+ALM 201
+Almanca III	Almanca	3	4	2	2	0
+ALM 202
+Almanca IV	Almanca	3	4	2	2	0
+ALM 301
+Almanca V	Almanca	3	4	2	2	0
+ALM 302
+Almanca VI	Almanca	3	4	2	2	0
+ALM 401
+Almanca VII	Almanca	3	4	2	2	0
+ARB 101
+Arapça I	Türkçe	3	4	2	2	0
+ARB 102
+Arapça II	Türkçe	3	4	2	2	0
+CIN 101
+Çince I	Çince	3	4	2	2	0
+CIN 102
+Çince II	Çince	3	4	2	2	0
+CIN 201
+Çince III	Çince	3	4	2	2	0
+FRA 101
+Fransızca I	Fransızca	3	4	2	2	0
+FRA 102
+Fransızca II	Fransızca	3	4	2	2	0
+FRA 201
+Fransızca III	Fransızca	3	4	2	2	0
+FRA 202
+Fransızca IV	Fransızca	3	4	2	2	0
+FRA 301
+Fransızca V	Fransızca	3	4	2	2	0
+FRA 302
+Fransızca VI	Fransızca	3	4	2	2	0
+HUK 211
+Sosyal Güvenlik Hukuku	Türkçe	3	4	3	0	0
+HUK 212
+Sendika.&Toplu İş Sözl.Hukuku	Türkçe	3	4	3	0	0
+HUK 213
+İş Sağlığı ve Güvenliği Hukuku	Türkçe	3	4	3	0	0
+HUK 214
+Teknolojik Yeniliklerin Korun.	Türkçe	3	4	3	0	0
+HUK 215
+Sözleşmeler Hukuku	Türkçe	3	4	3	0	0
+HUK 216
+Telekomünikasyon Hukuku	Türkçe	3	4	3	0	0
+HUK 217
+AR-GE Hukuku	Türkçe	3	4	3	0	0
+HUK 218
+Ticaret Hukuku	Türkçe	3	4	3	0	0
+ING 103A
+Creative Writing	English	3	4	3	0	0
+ING 103AC
+Urban Ecology	English	3	4	3	0	0
+ING 103AD
+Advanced English for Engineers	English	3	4	3	0	0
+ING 103B
+Business English	English	3	4	3	0	0
+ING 103C
+Great Moments in Science	English	3	4	3	0	0
+ING 103CO
+Profess.Communic.for Engineers	English	3	4	3	0	0
+ING 103DD
+Decoding Discourse: Language, Power, and Ideology	English	3	4	3	0	0
+ING 103G
+Business Communications	English	3	4	3	0	0
+ING 103H
+Public Presentations	English	3	4	3	0	0
+ING 103I
+Short Stories	English	3	4	3	0	0
+ING 103L
+Mythology	English	3	4	3	0	0
+ING 103N
+Film Studies	English	3	4	3	0	0
+ING 103O
+Psychology	English	3	4	3	0	0
+ING 103P
+Poetry	English	3	4	3	0	0
+ING 103ES
+Intercultural Citizenship in International Education	English	3	4	3	0	0
+ING 103SC
+Science Communication	English	3	4	3	0	0
+ISL 465E
+Int.to Entrepreneurship&Innov.	English	3	4	3	0	0
+ISP 101
+İspanyolca I	İspanyolca	3	4	2	2	0
+ISP 102
+İspanyolca II	İspanyolca	3	4	2	2	0
+ISP 201
+İspanyolca III	İspanyolca	3	4	2	2	0
+ISP 202
+İspanyolca IV	İspanyolca	3	4	2	2	0
+ISP 301
+İspanyolca V	İspanyolca	3	4	2	2	0
+ISP 302
+İspanyolca VI	İspanyolca	3	4	2	2	0
+ITA 101
+İtalyanca I	İtalyanca	3	4	2	2	0
+ITA 102
+İtalyanca II	İtalyanca	3	4	2	2	0
+ITA 201
+İtalyanca III	İtalyanca	3	4	2	2	0
+ITA 202
+İtalyanca IV	İtalyanca	3	4	2	2	0
+ITA 301
+İtalyanca V	İtalyanca	3	4	2	2	0
+ITB 020E
+Formations of Modernity	English	3	4	3	0	0
+ITB 037E
+Knowledge, Language & Logic	English	3	4	3	0	0
+ITB 087E
+Media and Society	English	3	4	3	0	0
+ITB 094E
+International.Rel.and Globali.	English	3	4	3	0	0
+ITB 095E
+Technology, Policy and Law	English	3	4	3	0	0
+ITB 143E
+Durrel and Said : Orientalism Practiced and Theorized	English	3	4	3	0	0
+ITB 151E
+Human Resources and Management	English	3	4	3	0	0
+ITB 171E
+Science,Technology and Society	English	3	4	3	0	0
+ITB 179E
+Literatures of Intimate Separacies:Vizyones,Seyfettin,Armen	English	3	4	3	0	0
+ITB 201E
+Introduction to Humanities & Social Sciences	English	3	4	3	0	0
+ITB 202E
+World History	English	3	4	3	0	0
+ITB 203E
+Sociology	English	3	4	3	0	0
+ITB 204E
+Political Science	English	3	4	3	0	0
+ITB 205E
+Philosophy	English	3	4	3	0	0
+ITB 206E
+Issues in World Politics	English	3	4	3	0	0
+ITB 207E
+Ottoman History	English	3	4	3	0	0
+ITB 208E
+Formations of Modern Türkiye	English	3	4	3	0	0
+ITB 209E
+Türkiye in World Affairs	English	3	4	3	0	0
+ITB 213E
+Toplics in Literature and Society	English	3	4	3	0	0
+ITB 214E
+The Modern Middle East	English	3	4	3	0	0
+ITB 215E
+Topics in Hist.and Society	English	3	4	3	0	0
+ITB 216E
+Economy and Society	English	3	4	3	0	0
+ITB 217E
+Engineering Ethics	English	3	4	3	0	0
+ITB 218E
+History of Science&Technology	English	3	4	3	0	0
+ITB 219E
+Ethics	English	3	4	3	0	0
+ITB 220E
+Psychology	English	3	4	3	0	0
+ITB 221E
+Anatolian Archaeology	English	3	4	3	0	0
+ITB 222E
+City and Society	English	3	4	3	0	0
+ITB 224E
+Environment and Society	English	3	4	3	0	0
+ITB 225E
+Intercultural Citizenship Education	English	3	4	3	0	0
+ITB 227E
+Political Theory	English	3	4	3	0	0
+ITB 228E
+Gender Studies	English	3	4	3	0	0
+ITB 230E
+Disaster Awareness	English	3	4	3	0	0
+ITB 231E
+Volunteering Studies	English	3	4	2	2	0
+ITB 232E
+Technology and Society	English	3	4	3	0	0
+ITB 233E
+Anthropology	English	3	4	3	0	0
+ITB 234E
+The Rise of Civilizations	English	3	4	3	0	0
+ITB 235E
+Türkiye and EuropeanUnion	English	3	4	3	0	0
+ITB 324E
+Current Environmental Problems	English	3	4	3	0	0
+JPN 101
+Japonca I	Japonca	3	4	2	2	0
+JPN 102
+Japonca II	Japonca	3	4	2	2	0
+JPN 201
+Japonca III	Japonca	3	4	2	2	0
+JPN 202
+Japonca IV	Japonca	3	4	2	2	0
+RUS 101
+Rusça I	Rusça	3	4	2	2	0
+RUS 102
+Rusça II	Rusça	3	4	2	2	0
+RUS 201
+Rusça III	Rusça	3	4	2	2	0
+RUS 202
+Rusça IV	Rusça	3	4	2	2	0
+SNT 102E
+Photography	English	3	4	3	0	0
+SNT 103E
+Drawing	English	3	4	3	0	0
+SNT 104E
+Mythology and Art	English	3	4	3	0	0
+SNT 105E
+Film Art	English	3	4	3	0	0
+SNT 106E
+Traditional Turkish Art&Crafts	English	3	4	3	0	0
+SNT 107E
+Ancient Civilizat.in Anatolia	English	3	4	3	0	0
+SNT 112E
+Theater	English	3	4	3	0	0
+SNT 113E
+Art and Interpretation	English	3	4	3	0	0
+SNT 114E
+Contemporary Art	English	3	4	3	0	0
+SNT 116E
+The Art of Communication	English	3	4	3	0	0
+SNT 117E
+Jazz Appreciation	English	3	4	3	0	0
+SNT 121E
+World Music Cultures	English	3	4	3	0	0
+SNT 123E
+Film Production	English	3	4	3	0	0
+SNT 211E
+Istanbul:Hist.,Art and Society	English	3	4	3	0	0
+SNT 212E
+Art,Culture and Society	English	3	4	3	0	0
+SNT 215E
+Balkan Musics	English	3	4	3	0	0
+SNT 226E
+Philosophy of Art	English	3	4	3	0	0
+SNT 227E
+Sound and Society	English	3	4	3	0	0

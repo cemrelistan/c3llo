@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧙</text></svg>" />
-    <script type="module" crossorigin src="./assets/index-dFhQoCy_.js"></script>
+    <script type="module" crossorigin src="./assets/index-D0MoRDRd.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BtlspOFf.css">
   </head>
   <body>
@@ -200,6 +200,23 @@
                 <div class="stat-item conflict-indicator" id="conflictIndicator" style="display:none">
                   <span class="stat-label">⚠️ Çakışma</span>
                   <span class="stat-value stat-danger" id="conflictCount">0</span>
+                </div>
+                <div style="margin-left: auto; display: flex; gap: 8px; align-items: center;">
+                  <button class="btn-action btn-action-danger" id="clearCalendarBtn" title="Takvimi Temizle" style="width: auto; height: auto; padding: 6px 12px; font-size: 0.75rem; display: flex; align-items: center; gap: 4px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="3 6 5 6 21 6"></polyline>
+                      <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path>
+                    </svg>
+                    Takvimi Temizle
+                  </button>
+                  <button class="btn-primary" id="downloadCalendarBtn" title="Resim Olarak İndir" style="padding: 6px 12px; font-size: 0.75rem; display: flex; align-items: center; gap: 4px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Resim Olarak İndir
+                  </button>
                 </div>
               </div>
               <div class="weekly-calendar" id="weeklyCalendar">

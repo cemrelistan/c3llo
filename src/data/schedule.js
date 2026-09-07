@@ -390,8 +390,51 @@ export const TIME_SLOTS = [
   '12:30 - 13:29', '13:30 - 14:29', '14:30 - 15:29', '15:30 - 16:29', '16:30 - 17:29'
 ];
 
+export function expandScheduleItem(item) {
+  const days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma'];
+  const foundDays = days.filter(d => item.day.includes(d));
+  
+  if (foundDays.length <= 1) {
+    return [item];
+  }
+  
+  const times = (item.timeStart + item.timeEnd).match(/\d{2}:\d{2}/g) || [];
+
+  return foundDays.map((d, index) => {
+    let tStart = '08:30';
+    let tEnd = '11:29';
+
+    if (foundDays.length === 2) {
+      if (index === 0) {
+        tStart = times[0] || '08:30';
+        tEnd = times[1] || '11:29';
+      } else {
+        tStart = times[2] || (times[0] === '14:30' ? '08:30' : '11:30');
+        tEnd = times[3] || (tStart === '08:30' ? '11:29' : '14:29');
+      }
+    }
+
+    const cleanBuilding = item.building.includes('undeclared') ? 'MED' : item.building.replace(/^([A-Z]+)\1$/, '$1');
+    const cleanClassroom = item.classroom.replace(/^([A-Z0-9-]+)\1$/, '$1');
+
+    return {
+      ...item,
+      day: d,
+      timeStart: tStart,
+      timeEnd: tEnd,
+      building: cleanBuilding,
+      classroom: cleanClassroom
+    };
+  });
+}
+
 export function getScheduleByCourseId(id) {
-  return scheduleData.filter(s => s.courseId === id);
+  const rawList = scheduleData.filter(s => s.courseId === id);
+  const result = [];
+  for (const item of rawList) {
+    result.push(...expandScheduleItem(item));
+  }
+  return result;
 }
 
 export function hasTimeConflict(course1, course2) {

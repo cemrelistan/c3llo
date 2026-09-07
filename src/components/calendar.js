@@ -1,11 +1,14 @@
 // Calendar - Haftalık Takvim Oluşturucu
+import html2canvas from 'html2canvas';
 import { courses, courseMap, COURSE_TYPES, arePrerequisitesMet } from '../data/courses.js';
 import { scheduleData, getScheduleByCourseId, DAY_NAMES, TIME_SLOTS, hasTimeConflict } from '../data/schedule.js';
+
+const STORAGE_KEY_SELECTED = 'ders-sihirbazi-selected-courses';
 
 export class Calendar {
   constructor() {
     this.passedCourses = new Set();
-    this.selectedCourses = new Map(); // courseId -> { course, timeSlots }
+    this.selectedCourses = this.loadSelectedCourses(); // courseId -> { course, timeSlots }
     this.courseTypeFilter = 'all';
 
     this.weeklyCalendar = document.getElementById('weeklyCalendar');
@@ -19,12 +22,23 @@ export class Calendar {
   init() {
     this.renderCalendarGrid();
     this.bindEvents();
+    this.renderAvailableCourses();
+    this.renderCalendarEvents();
+    this.updateStats();
   }
 
   bindEvents() {
     this.courseTypeFilterEl?.addEventListener('change', (e) => {
       this.courseTypeFilter = e.target.value;
       this.renderAvailableCourses();
+    });
+
+    document.getElementById('clearCalendarBtn')?.addEventListener('click', () => {
+      this.clearCalendar();
+    });
+
+    document.getElementById('downloadCalendarBtn')?.addEventListener('click', () => {
+      this.downloadCalendarImage();
     });
   }
 
@@ -119,15 +133,18 @@ export class Calendar {
         prereqMsg = `Eksik: ${pStr.trim()}`;
       }
 
+      const crnList = schedule.length > 0 ? Array.from(new Set(schedule.map(s => s.crn))).join(', ') : '';
+
       return `
         <div class="course-card ${typeClass} ${isSelected ? 'selected' : ''}"
              style="${!isMet ? 'opacity: 0.5; cursor: not-allowed; filter: grayscale(1);' : ''}"
              data-course-id="${course.id}"
              onclick="${!isMet ? '' : `window.calendarInstance.toggleCourse('${course.id}')`}">
-          <div class="course-card-header" style="display: block; margin-bottom: 8px;">
+          <div class="course-card-header" style="display: block; margin-bottom: 4px;">
             <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; word-break: break-word;">
               ${!isMet ? '🔒 ' : ''}${course.name}
             </div>
+            ${crnList ? `<div style="font-size: 0.75rem; font-weight: 700; color: #00d4ff; margin-top: 2px;">CRN: ${crnList}</div>` : ''}
           </div>
           <div class="course-title" style="color: var(--text-muted); font-size: 0.75rem;">
             ${course.code} • ${course.credit} Kr / ${course.ects} AKTS
@@ -166,6 +183,7 @@ export class Calendar {
       this.selectedCourses.set(courseId, {
         course,
         timeSlots: crnSchedule.map(s => ({
+          crn: s.crn,
           day: s.day,
           timeStart: s.timeStart,
           timeEnd: s.timeEnd,
@@ -176,6 +194,7 @@ export class Calendar {
       });
     }
 
+    this.saveSelectedCourses();
     this.renderAvailableCourses();
     this.renderCalendarEvents();
     this.updateStats();
@@ -212,6 +231,7 @@ export class Calendar {
       instructor: ''
     });
 
+    this.saveSelectedCourses();
     this.renderAvailableCourses();
     this.renderCalendarEvents();
     this.updateStats();
@@ -265,6 +285,7 @@ export class Calendar {
 
       eventEl.innerHTML = `
         <div class="calendar-event-title">${slot.course.name}</div>
+        ${slot.crn ? `<div class="calendar-event-crn" style="font-size: 0.7rem; font-weight: 700; color: #00d4ff; margin: 1px 0;">CRN: ${slot.crn}</div>` : ''}
         <div class="calendar-event-location">${slot.timeStart} - ${slot.timeEnd}</div>
         ${slot.building ? `<div class="calendar-event-location">${slot.building} ${slot.classroom || ''}</div>` : ''}
       `;
@@ -330,8 +351,61 @@ export class Calendar {
         this.selectedCourses.delete(courseId);
       }
     }
+    this.saveSelectedCourses();
     this.renderAvailableCourses();
     this.renderCalendarEvents();
     this.updateStats();
+  }
+
+  saveSelectedCourses() {
+    try {
+      const data = [...this.selectedCourses.entries()];
+      localStorage.setItem(STORAGE_KEY_SELECTED, JSON.stringify(data));
+    } catch (e) {
+      console.error('Error saving selected courses:', e);
+    }
+  }
+
+  loadSelectedCourses() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY_SELECTED);
+      if (saved) {
+        const entries = JSON.parse(saved);
+        return new Map(entries);
+      }
+    } catch (e) {
+      console.error('Error loading selected courses:', e);
+    }
+    return new Map();
+  }
+
+  clearCalendar() {
+    this.selectedCourses.clear();
+    this.saveSelectedCourses();
+    this.renderAvailableCourses();
+    this.renderCalendarEvents();
+    this.updateStats();
+  }
+
+  async downloadCalendarImage() {
+    const calendarEl = document.getElementById('weeklyCalendar');
+    if (!calendarEl) return;
+
+    try {
+      const canvas = await html2canvas(calendarEl, {
+        backgroundColor: '#0a0e1a',
+        scale: 2,
+        useCORS: true,
+        logging: false
+      });
+
+      const link = document.createElement('a');
+      link.download = `Haftalik_Ders_Programi_${new Date().toISOString().slice(0, 10)}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } catch (err) {
+      console.error('Takvim resmi indirilirken hata oluştu:', err);
+      alert('Resim indirilirken bir hata oluştu.');
+    }
   }
 }

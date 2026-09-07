@@ -36,7 +36,7 @@ export const courses = [
   { id: 'VBA_115E', code: 'VBA 115E', name: 'Fundamentals of Linux', semester: 1, credit: 3, ects: 5.0, type: COURSE_TYPES.MANDATORY, department: 'VBA', rawPrereq: '' },
   { id: 'VBA_210E', code: 'VBA 210E', name: 'Linear Algebra and Applications', semester: 1, credit: 3, ects: 4.5, type: COURSE_TYPES.MANDATORY, department: 'VBA', rawPrereq: '' },
   { id: 'ING_100', code: 'ING 100', name: 'EAP Through Global Goals', semester: 1, credit: 3, ects: 3.5, type: COURSE_TYPES.MANDATORY, department: 'ING', rawPrereq: '' },
-  { id: 'MAT_104E', code: 'MAT 104E', name: 'Mathematics II', semester: 2, credit: 4, ects: 6.5, type: COURSE_TYPES.MANDATORY, department: 'MAT', rawPrereq: '' },
+  { id: 'MAT_104E', code: 'MAT 104E', name: 'Mathematics II', semester: 2, credit: 4, ects: 6.5, type: COURSE_TYPES.MANDATORY, department: 'MAT', rawPrereq: 'Matematik I / Mathematics I(MAT 103MIN. DDVeyaMAT 103EMIN. DD)' },
   { id: 'VBA_122E', code: 'VBA 122E', name: 'Discrete Mathematics', semester: 2, credit: 3, ects: 5.0, type: COURSE_TYPES.MANDATORY, department: 'VBA', rawPrereq: '' },
   { id: 'VBA_124E', code: 'VBA 124E', name: 'Object Oriented Programming', semester: 2, credit: 3, ects: 7.5, type: COURSE_TYPES.MANDATORY, department: 'VBA', rawPrereq: 'Nesneye Yönelik Programlama / Object Oriented Programming(VBA 113EMIN. DDVeyaVBA 113MIN. DD)' },
   { id: 'VBA_252E', code: 'VBA 252E', name: 'Theory of Probability', semester: 2, credit: 3, ects: 7.0, type: COURSE_TYPES.MANDATORY, department: 'VBA', rawPrereq: 'Olasılık Teorisi / Theory of Probability(MAT 103MIN. DDVeyaMAT 103EMIN. DD)' },
